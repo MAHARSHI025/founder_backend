@@ -14,7 +14,11 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(json());
-app.use('/api',fetchrouter)
+app.use('/api', fetchrouter)
+app.get("/api/ping", (req, res) => {
+  res.status(200).send("OK");
+});
+
 
 const server = createServer(app);
 
