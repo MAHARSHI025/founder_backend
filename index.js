@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 import { connect } from "./db/connectdb.js";
 import { registerSocketEvents } from "./routes/chat.route.js";
 import fetchrouter from "./routes/fetch.route.js";
+import uploadRouter from "./routes/upload.route.js";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(json());
 app.use('/api', fetchrouter)
+app.use('/api', uploadRouter)
 app.get("/api/ping", (req, res) => {
   res.status(200).send("OK");
 });

@@ -13,7 +13,27 @@ const chatSchema = new mongoose.Schema({
     },
     message: {
         type: String,
-        required: true,
+        default: "",
+    },
+    file: {
+        url: {
+            type: String,
+        },
+        public_id: {
+            type: String,
+        },
+        resource_type: {
+            type: String,
+        },
+        original_name: {
+            type: String,
+        },
+        bytes: {
+            type: Number,
+        },
+        format: {
+            type: String,
+        },
     },
    
 }, {
